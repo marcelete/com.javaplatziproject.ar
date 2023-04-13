@@ -1,15 +1,17 @@
+import static Ui.UIMenu.showMenu;
 
 
 public class Main {
     public static void main(String[] args) {
 
-        Doctor myDoctor = new Doctor("Marcelo Bellizia"; "Traumatologo");
+        //showMenu();
 
-        //Doctor drOsvaldo = new Doctor(int id, String name, String speciality){
+       // Doctor doctor = new Doctor("Marcelo", "Traumatologia");
 
-        Doctor drDr = new Doctor();
+        Patient patient = new Patient("Adrian", "adriangomez@email.com");
 
-        drDr.toString();
-       // myDoctor.toString();
+        patient.setPhoneNumber("0");
+
+
     }
 }
