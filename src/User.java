@@ -67,13 +67,17 @@ public class User {
         }
     }
 
-
-
     public Scanner getPhoneNumberScanner() {
         return phoneNumberScanner;
     }
 
     public void setPhoneNumberScanner(Scanner phoneNumberScanner) {
         this.phoneNumberScanner = phoneNumberScanner;
+    }
+
+    @Override
+    public String toString() {
+        return "User: " + getName() + " \nEmail: " + getEmail() + " \nAddress: " + getAddress() +
+               " \nNumero de telefono: " + getPhoneNumber() + "\n";
     }
 }

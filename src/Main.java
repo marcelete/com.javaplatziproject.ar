@@ -10,7 +10,7 @@ public class Main {
 
         Patient patient = new Patient("Adrian", "adriangomez@email.com");
 
-        patient.setPhoneNumber("0");
+        System.out.println(patient);
 
 
     }
