@@ -1,3 +1,5 @@
+package Model;
+
 import java.util.Scanner;
 
 public class User {
@@ -77,7 +79,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User: " + getName() + " \nEmail: " + getEmail() + " \nAddress: " + getAddress() +
+        return "Usuario: " + getName() + " \nEmail: " + getEmail() + " \nDirección: " + getAddress() +
                " \nNumero de telefono: " + getPhoneNumber() + "\n";
     }
 }

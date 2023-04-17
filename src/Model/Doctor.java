@@ -1,11 +1,11 @@
-import java.net.StandardSocketOptions;
+package Model;
+
 import java.util.ArrayList;
 import java.util.Date;
 
 public class Doctor extends User{
-    //Atributos
+    //Atributos propios
     String speciality;
-
 
     //Constructor
     public Doctor(String name, String email) {
@@ -13,7 +13,8 @@ public class Doctor extends User{
         System.out.println("El nombre del doctor es "+ name);
         this.speciality = speciality;
     }
-
+    //Comportamientos
+    //Getters & Setters
     public String getSpeciality() {
         return speciality;
     }
@@ -22,20 +23,25 @@ public class Doctor extends User{
         this.speciality = speciality;
     }
 
-    //Comportamientos
-    //Agendar una cita / Arrange an appointment
-
     //Instanciar la lista de availableAppointment
+
     ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
 
-    //agendar una nueva cita
-
+        //agendar una nueva cita
     public void addAvailableAppointment(Date date, String time){
         availableAppointments.add(new Doctor.AvailableAppointment(date, time));
     }
-    // ver citas agendadas / view AvailableAppointments
+
+        // ver citas agendadas / view AvailableAppointments
     public ArrayList<AvailableAppointment> getAvailableAppointments() {
         return availableAppointments;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                "Especialidad: " + speciality + "\n" +
+                "Citas disponibles: " + getAvailableAppointments();
     }
 
     //Crear una clase anidada de objetos "availableAppointment
@@ -71,8 +77,14 @@ public class Doctor extends User{
             return time;
         }
 
-        public void setTime(String time) {
-            this.time = time;
+        public void setTime(String time) {this.time = time;}
+
+        @Override
+        public String toString() {
+            return  "\nDía: " + date + " Hora: " + time;
         }
     }
 }
+
+
+
