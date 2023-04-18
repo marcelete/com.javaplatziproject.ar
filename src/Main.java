@@ -1,5 +1,3 @@
-package Ui;
-
 import Model.Doctor;
 
 import java.util.Date;
