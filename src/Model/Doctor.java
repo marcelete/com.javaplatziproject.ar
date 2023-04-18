@@ -27,7 +27,7 @@ public class Doctor extends User{
 
     ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
 
-        //agendar una nueva cita
+      /*  //agendar una nueva cita
     public void addAvailableAppointment(Date date, String time){
         availableAppointments.add(new Doctor.AvailableAppointment(date, time));
     }
@@ -43,7 +43,7 @@ public class Doctor extends User{
                 "Especialidad: " + speciality + "\n" +
                 "Citas disponibles: " + getAvailableAppointments();
     }
-
+*/
     //Crear una clase anidada de objetos "availableAppointment
     public static class AvailableAppointment{
         //Variables (darle sus caracteristicas)
