@@ -44,6 +44,14 @@ public class Nurse extends User{
                 "Citas disponibles: " + getAvailableAppointments();
     }
 
+    @Override
+    public void showDataUser() {
+        System.out.println(
+                "Empleado del Hospital: Cruz Verde\n" +
+                "Departamento: Pediatría, Oncología"
+        );
+    }
+
     //Crear una clase anidada de objetos "availableAppointment
     public static class AvailableAppointment{
         //Variables (darle sus caracteristicas)
@@ -83,7 +91,10 @@ public class Nurse extends User{
         public String toString() {
             return  "\nDía: " + date + " Hora: " + time;
         }
+
     }
+
+
 }
 
 

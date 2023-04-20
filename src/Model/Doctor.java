@@ -13,6 +13,15 @@ public class Doctor extends User{
         System.out.println("El nombre del doctor es "+ name);
         this.speciality = speciality;
     }
+
+    @Override
+    public void showDataUser() {
+        System.out.println(
+                "Empleado del Hospital: Cruz Roja\n" +
+                "Departamento: Oncología"
+        );
+    }
+
     //Comportamientos
     //Getters & Setters
     public String getSpeciality() {
@@ -27,7 +36,7 @@ public class Doctor extends User{
 
     ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
 
-      /*  //agendar una nueva cita
+       //agendar una nueva cita
     public void addAvailableAppointment(Date date, String time){
         availableAppointments.add(new Doctor.AvailableAppointment(date, time));
     }
@@ -43,7 +52,6 @@ public class Doctor extends User{
                 "Especialidad: " + speciality + "\n" +
                 "Citas disponibles: " + getAvailableAppointments();
     }
-*/
     //Crear una clase anidada de objetos "availableAppointment
     public static class AvailableAppointment{
         //Variables (darle sus caracteristicas)

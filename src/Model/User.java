@@ -82,4 +82,6 @@ public abstract class User {
         return "Usuario: " + getName() + " \nEmail: " + getEmail() + " \nDirección: " + getAddress() +
                " \nNumero de telefono: " + getPhoneNumber() + "\n";
     }
+
+    public abstract void showDataUser();
 }

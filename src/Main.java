@@ -1,4 +1,5 @@
 import Model.Doctor;
+import Model.User;
 
 import java.util.Date;
 
@@ -24,6 +25,12 @@ public class Main {
 
         //Model.Doctor.AvailableAppointment availableAppointment = new Model.Doctor.AvailableAppointment(int 2000, int 12, int 10; String "20:00");
 
+        Model.User user1 = new User() {
+            @Override
+            public void showDataUser() {
+
+            }
+        }
 
     }
 }
