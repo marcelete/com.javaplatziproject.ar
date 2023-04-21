@@ -40,15 +40,15 @@ public class Nurse extends User{
     @Override
     public String toString() {
         return super.toString() +
-                "Especialidad: " + speciality + "\n" +
-                "Citas disponibles: " + getAvailableAppointments();
+                "Speciality: " + speciality + "\n" +
+                "Available Appointment: " + getAvailableAppointments();
     }
 
     @Override
     public void showDataUser() {
         System.out.println(
-                "Empleado del Hospital: Cruz Verde\n" +
-                "Departamento: Pediatría, Oncología"
+                "Hospital's Employee: Cruz Verde\n" +
+                "Departament: Pediatry, Oncology"
         );
     }
 

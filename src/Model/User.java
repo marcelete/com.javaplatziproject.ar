@@ -54,17 +54,17 @@ public abstract class User {
 
 
      public void setPhoneNumber(String phoneNumber) {
-        System.out.println("Ingrese su phoneNumber");
+        System.out.println("Enter your phone number");
         phoneNumber = phoneNumberScanner.nextLine();
         if (phoneNumber.length()!= 8){
             do {
-                System.out.println("El numero de telefono debe ser de 8 digitos sin 0 ni 11. \n " +
-                        "Ingrese un nuevo numero de telefono");
+                System.out.println("The phone number length must be 8 digits." +
+                        "\nEnter your phone number");
                         phoneNumber = phoneNumberScanner.nextLine();
             }
             while (phoneNumber.length()!=8);
         } else {
-            System.out.println("El numero de telefono es correcto");
+            System.out.println("Phone number is correct");
             this.phoneNumber=phoneNumber;
         }
     }
@@ -79,8 +79,8 @@ public abstract class User {
 
     @Override
     public String toString() {
-        return "Usuario: " + getName() + " \nEmail: " + getEmail() + " \nDirección: " + getAddress() +
-               " \nNumero de telefono: " + getPhoneNumber() + "\n";
+        return "User: " + getName() + " \nEmail: " + getEmail() + " \nAdress: " + getAddress() +
+               " \nPhone number: " + getPhoneNumber() + "\n";
     }
 
     public abstract void showDataUser();

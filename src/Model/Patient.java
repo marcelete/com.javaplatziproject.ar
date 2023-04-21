@@ -9,7 +9,7 @@ public class Patient extends User{
     private String blood;
 
 
-    Patient (String name, String email) {
+    public Patient (String name, String email) {
         super(name, email);
         this.birthday = birthday;
         this.weight = weight;
@@ -38,7 +38,7 @@ public class Patient extends User{
     }
 
     public String getHeight() {
-        return height + " metros";
+        return height + " meters";
     }
 
     public void setHeight(double height) {
@@ -55,15 +55,15 @@ public class Patient extends User{
 
     @Override
     public String toString() {
-        return super.toString() + "Cumpleaños: " + getBirthday() +
-                "\nPeso: " + getWeight() +
-                "\nAltura: " + getHeight() +
+        return super.toString() + "Birthday: " + getBirthday() +
+                "\nWeight: " + getWeight() +
+                "\nHeight: " + getHeight() +
                 "\nBlood: " + getBlood();
     }
 
     @Override
     public void showDataUser() {
-        System.out.println("Paciente" +
-                "Historial completo");
+        System.out.println("Patient" +
+                "\nComplete History");
     }
 }

@@ -1,5 +1,7 @@
 package Model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -10,15 +12,15 @@ public class Doctor extends User{
     //Constructor
     public Doctor(String name, String email) {
         super(name, email);
-        System.out.println("El nombre del doctor es "+ name);
+        System.out.println("Doctor's name is "+ name);
         this.speciality = speciality;
     }
 
     @Override
     public void showDataUser() {
         System.out.println(
-                "Empleado del Hospital: Cruz Roja\n" +
-                "Departamento: Oncología"
+                "Hospital's Employee: Red Cross\n" +
+                "Department: Oncology"
         );
     }
 
@@ -37,7 +39,7 @@ public class Doctor extends User{
     ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
 
        //agendar una nueva cita
-    public void addAvailableAppointment(Date date, String time){
+    public void addAvailableAppointment(String date, String time){
         availableAppointments.add(new Doctor.AvailableAppointment(date, time));
     }
 
@@ -49,8 +51,8 @@ public class Doctor extends User{
     @Override
     public String toString() {
         return super.toString() +
-                "Especialidad: " + speciality + "\n" +
-                "Citas disponibles: " + getAvailableAppointments();
+                "Speciality: " + speciality + "\n" +
+                "Available Appointmnt: " + getAvailableAppointments();
     }
     //Crear una clase anidada de objetos "availableAppointment
     public static class AvailableAppointment{
@@ -58,10 +60,15 @@ public class Doctor extends User{
         private int id;
         private Date date;
         private String time;
+        private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
         //Hacer su contructor
-        public AvailableAppointment(Date date, String time){
-            this.date = date;
+        public AvailableAppointment(String date, String time){
+            try {
+                this.date = simpleDateFormat.parse(date);
+            } catch (ParseException e) {
+                throw new RuntimeException(e);
+            }
             this.time = time;
         }
         //Establecer getters y setters
@@ -77,6 +84,10 @@ public class Doctor extends User{
             return date;
         }
 
+        public String getDate(String date) {
+            return simpleDateFormat.format(date);
+        }
+
         public void setDate(Date date) {
             this.date = date;
         }
@@ -89,7 +100,7 @@ public class Doctor extends User{
 
         @Override
         public String toString() {
-            return  "\nDía: " + date + " Hora: " + time;
+            return  "\nDate: " + date + " Time: " + time;
         }
     }
 }
