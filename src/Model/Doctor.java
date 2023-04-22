@@ -12,7 +12,6 @@ public class Doctor extends User{
     //Constructor
     public Doctor(String name, String email) {
         super(name, email);
-        System.out.println("Doctor's name is "+ name);
         this.speciality = speciality;
     }
 

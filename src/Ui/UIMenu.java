@@ -47,36 +47,7 @@ public class UIMenu {
         }while (response != 0);
     }
 
-    static void showPatientMenu(){
-        int response = 0;
-        do {
-            System.out.println("\n\n");
-            System.out.println("Patient");
-            System.out.println("1. Book an appointment");
-            System.out.println("2. My appointments");
-            System.out.println("0. Return");
-
-            Scanner sc = new Scanner(System.in);
-            response = Integer.valueOf(sc.nextLine());
-
-            switch (response){
-                case 1:
-                    System.out.println("::Book an appointment");
-                    for (int i = 0; i < 4; i++) {
-                        System.out.println(i +". " + MONTHS[i]);
-                    }
-                    break;
-                case 2:
-                    System.out.println("::My appointments");
-                    break;
-                case 0:
-                    showMenu();
-                    break;
-            }
-        }while (response != 0);
-    }
-
-    private static void authUser(int userType){
+        private static void authUser(int userType){
         // userType = 1 Doctor
         // userType = 2 Patient
 
@@ -100,7 +71,7 @@ public class UIMenu {
                     if (d.getEmail().equals(email)) {
                         correctEmail = true;
                         doctorLogged = d;
-                        showDoctorMenu();
+                        UIDoctorMenu.showDoctorMenu();
                     }
                 }
             }
@@ -109,7 +80,7 @@ public class UIMenu {
                     if (p.getEmail().equals(email)){
                         correctEmail = true;
                         patientLogged = p;
-                        showPatientMenu();
+                        UIPatientMenu.showPatientMenu();
                     }
 
                 }

@@ -1,12 +1,16 @@
 package Model;
 
 
-public class Patient extends User{
+import java.util.ArrayList;
+import java.util.Date;
+
+public class Patient extends User implements ISchedulable{
     //Atributos
     private String birthday;
     private double weight;
     private double height;
     private String blood;
+
 
 
     public Patient (String name, String email) {
@@ -65,5 +69,10 @@ public class Patient extends User{
     public void showDataUser() {
         System.out.println("Patient" +
                 "\nComplete History");
+    }
+
+    @Override
+    public void schedule(Date date, String time) {
+
     }
 }
