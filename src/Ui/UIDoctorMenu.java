@@ -88,7 +88,7 @@ public class UIDoctorMenu {
         } while (response != 0);
     }
 
-    private static void checkDoctorsAvailableAppointments (Doctor doctor) {
+    public static void checkDoctorsAvailableAppointments (Doctor doctor) {
         if (doctor.getAvailableAppointments().size()>0
                 && !doctorsAvailableAppointments.contains(doctor)){
             doctorsAvailableAppointments.add(doctor);

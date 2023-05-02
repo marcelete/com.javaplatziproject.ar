@@ -6,8 +6,10 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Doctor extends User{
-    //Atributos propios
-    String speciality;
+    //Atributos
+    private String speciality;
+    ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
+
 
     //Constructor
     public Doctor(String name, String email) {
@@ -15,16 +17,8 @@ public class Doctor extends User{
         this.speciality = speciality;
     }
 
-    @Override
-    public void showDataUser() {
-        System.out.println(
-                "Hospital's Employee: Red Cross\n" +
-                "Department: Oncology"
-        );
-    }
-
     //Comportamientos
-    //Getters & Setters
+
     public String getSpeciality() {
         return speciality;
     }
@@ -33,18 +27,22 @@ public class Doctor extends User{
         this.speciality = speciality;
     }
 
-    //Instanciar la lista de availableAppointment
+    //Obtener citas agendadas
+    public ArrayList<AvailableAppointment> getAvailableAppointments() {
+        return availableAppointments;
+    }
 
-    ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
-
-       //agendar una nueva cita
+    //Agendar una nueva cita
     public void addAvailableAppointment(String date, String time){
         availableAppointments.add(new Doctor.AvailableAppointment(date, time));
     }
 
-        // ver citas agendadas / view AvailableAppointments
-    public ArrayList<AvailableAppointment> getAvailableAppointments() {
-        return availableAppointments;
+    @Override
+    public void showDataUser() {
+        System.out.println(
+                "Hospital's Employee: Red Cross\n" +
+                        "Department: Oncology"
+        );
     }
 
     @Override
@@ -53,7 +51,8 @@ public class Doctor extends User{
                 "Speciality: " + speciality + "\n" +
                 "Available Appointmnt: " + getAvailableAppointments();
     }
-    //Crear una clase anidada de objetos "availableAppointment
+
+    //Crear una clase anidada de objetos "availableAppointment"
     public static class AvailableAppointment{
         //Variables (darle sus caracteristicas)
         private int id;
@@ -70,7 +69,8 @@ public class Doctor extends User{
             }
             this.time = time;
         }
-        //Establecer getters y setters
+
+        //Getters y setters
         public int getId() {
             return id;
         }
@@ -79,11 +79,11 @@ public class Doctor extends User{
             this.id = id;
         }
 
-        public Date getDate() {
+        public Date getDate(String DATE) {
             return date;
         }
 
-        public String getDate(String date) {
+        public String getDate() {
             return simpleDateFormat.format(date);
         }
 
