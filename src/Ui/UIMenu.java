@@ -10,7 +10,8 @@ import static Ui.UIDoctorMenu.showDoctorMenu;
 
 public class UIMenu {
 
-    public static final String[] MONTHS = {"Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
+    public static final String[] MONTHS = {"January","February","March","April","May",
+            "June","July","August", "September", "October", "November", "December"};
     public static Doctor doctorLogged;
     public static Patient patientLogged;
 
@@ -30,13 +31,11 @@ public class UIMenu {
 
             switch (response){
                 case 1:
-                    //System.out.println("Doctor");
                     authUser(1);
                     break;
                 case 2:
                     response = 0;
                     authUser(2);
-                    response = 0;
                     break;
                 case 0:
                     System.out.println("Thank you for you visit");
